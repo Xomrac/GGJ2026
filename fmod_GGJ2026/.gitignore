@@ -1,0 +1,48 @@
+####################################
+# FMOD Studio
+####################################
+
+# Cache e file temporanei
+.cache/
+.user/
+
+# Impostazioni locali dell'utente
+*.fspro.user
+
+# Build/Banks generati (output audio)
+# Se preferisci versionare i bank, commenta queste righe
+Build/
+Builds/
+Banks/
+
+# File temporanei o di backup
+*.bak
+*.tmp
+*.temp
+
+####################################
+# Sistema operativo
+####################################
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+####################################
+# Editor / IDE
+####################################
+
+# Visual Studio Code
+.vscode/
+
+# JetBrains
+.idea/
+
+####################################
+# Log
+####################################
+*.log
