@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{d8c2fd5b-0c9c-4bfc-ae04-2a0927273b0d}">
+		<property name="assetPath">
+			<value>Music/Lemon Demon - A Mask of My Own Face.mp3</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>211.69632653061225</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{9f5451ff-d29c-4e6c-91d1-7c24bf15471a}</destination>
+		</relationship>
+	</object>
+</objects>
