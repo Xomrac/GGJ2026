@@ -58,7 +58,7 @@ public class PagerManager : MonoBehaviour
 
 	private void OnNewDeliveryCreated(DeliveryData deliveryData)
 	{
-		_pagerText.text = $"{deliveryData.ToDeliver.PagerCode} - {deliveryData.DeliveryLocation.pagerCode}";
+		_pagerText.text = $"{deliveryData.ToDeliver.PagerCode} - {deliveryData.DeliveryLocation.PagerCode}";
 		_timeText.text = TimeSpan.FromSeconds(deliveryData.DeliveryTime).ToString(@"mm\:ss");
 		_pagerTransform.DOAnchorPosY(_pagerTransform.sizeDelta.y, _animationsDuration).SetEase(Ease.InOutBack);
 	}
