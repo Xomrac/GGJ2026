@@ -5,17 +5,16 @@ public class FMODEvents : MonoBehaviour
 {
     public static FMODEvents Instance { get; private set; }
 
-    [field: Header("Player")]
     [field: SerializeField] public EventReference playerFootsteps { get; private set; }
     [field: SerializeField] public EventReference playerJump { get; private set; }
     [field: SerializeField] public EventReference itemPickup { get; private set; }
     [field: SerializeField] public EventReference itemThrow { get; private set; }
-
-    [field: Header("UI")]
     [field: SerializeField] public EventReference pagerNotification { get; private set; }
-
-    [field: Header("MUSIC")]
+    [field: SerializeField] public EventReference note { get; private set; }
     [field: SerializeField] public EventReference timerTheme { get; private set; }
+    [field: SerializeField] public EventReference romanceTheme { get; private set; }
+    [field: SerializeField] public EventReference deliveryComplete { get; private set; }
+    [field: SerializeField] public EventReference deliveryFailed { get; private set; }
 
         private void Awake()
     {
