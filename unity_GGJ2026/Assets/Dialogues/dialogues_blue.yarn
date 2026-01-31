@@ -1,0 +1,44 @@
+title: Blue_firstQuest
+position: 197,337
+---
+Blue: *THUMP!* "EHI! Che modi sono, che fretta hai per venire a sbattermi addosso in questo modo? Guarda, hai rovinato il mio costume!! Argh, ora come faccio per la gara di questa sera? E non startene lì impalato, fa' qualcosa!"
+"Guarda qua, mi hai strappato tutte le fasciature!! Credo che con un po' di <b>ago e filo</b> potrei sistemare la cosa.. Certo che so cucire, per chi mi hai preso??"
+===
+title: Blue_firstLoop
+position: 20,337
+---
+Blue: "Credo che con un po' di <b>ago e filo</b> potrei sistemare la cosa.."
+===
+
+title: Blue_secondQuest
+position: 197,337
+---
+Blue: "AHA! Eccoti, proprio te stavo cercando! Il danno che hai fatto poco fa era più grave del previsto.. e beh, non sono riuscita a ripararlo! Ho bisogno di rifare il costume, mi serve della <b>stoffa</b>, e in fretta!"
+===
+title: Blue_secondLoop
+position: 20,337
+---
+Blue: "Ho bisogno di rifare il costume, mi serve della <b>stoffa</b>, e in fretta!"
+===
+
+title: Blue_thirdQuest
+position: 207,347
+---
+Blue: "Ehi! Ho rifatto il costume, ma la stoffa che mi hai portato non va bene col colore dei miei capelli! Non posso assolutamente presentarmi così alla gara di stasera.. Mi serve assolutamente una <b>parrucca</b>, prima di subito! Puoi.. Vuoi.. aiutarmi?"
+===
+title: Blue_thirdLoop
+position: 20,337
+---
+Blue: "Mi serve assolutamente una <b>parrucca</b>, prima di subito!"
+===
+
+title: Blue_feedbackBad
+position: 217,357
+---
+Blue: "Cosa diavolo mi hai portato? Cosa pensi che dovrei farci con questo ciarpame??"
+===
+title: Blue_feedbackGood
+position: 227,367
+---
+Blue: "Era ora! Che cosa ti ha trattenuto? Lascia stare, dammi qua!"
+===

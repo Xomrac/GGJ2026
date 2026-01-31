@@ -1,0 +1,45 @@
+title: Pink_firstQuest
+position: 230,337
+---
+Pink: "Ehi tu! è da un po' che ti osservo UwU sei proprio veloce! Ho bisogno del tuo aiuto!"
+"Il mio costume da magical girl è quasi pronto, ma per renderlo davvero perfetto ho bisogno di un <b>biaccialetto</b>. Se riesci a portarmi un bel <b>braccialetto</b> scintillante, potremmo anche sperare di vincere la gara di questa sera!"
+===
+title: Pink_firstLoop
+position: 270,377
+---
+Pink: "Se riesci a portarmi un bel <b>braccialetto</b> scintillante, potremmo anche sperare di vincere la gara di questa sera!"
+===
+
+
+title: Pink_secondQuest
+position: 230,337
+---
+Pink: "EHI! Ciao! Grazie ancora per prima ^^ ma la nostra missione non è finita, caro il mio corridore! Se vogliamo vincere la gara, c'è bisogno di un'altra cosa.. mmh.. ma sì, certo! Uno <b>scettro</b>! Un graaande <b>scettro</b> magico! Presto presto, daidaidai, la vittoria sarà nelle nostre mani!"
+===
+title: Pink_secondLoop
+position: 270,377
+---
+Pink: "Mi serve uno <b>scettro</b>! Un graaande <b>scettro</b> magico! Presto presto, daidaidai!"
+===
+
+title: Pink_thirdQuest
+position: 240,347
+---
+Pink: "EHI TU! Che bello vederti <3 non so davvero come ringraziarti per tutto l'aiuto che mi stai dando! Ma ho capito che manca ancora UNA cosa per avere la vittoria in pugno! Ho bisogno di un bel paio di <b>orecchie furri</b>! Devono essere grandi e vistose, perché, si sa, tutti amano i furri :3 portamele, per favore! E fa' presto, la gara è quasi iniziata!"
+===
+title: Pink_thirdLoop
+position: 270,377
+---
+Pink: "Ho bisogno di un bel paio di <b>orecchie furri</b>! Devono essere grandi e vistose!"
+===
+
+title: Pink_feedbackBad
+position: 250,357
+---
+Pink: "AHAHAH! Sei proprio simpatico!"
+===
+title: Pink_feedbackGood
+position: 260,367
+---
+Pink: "PERFETTO! GRAZIEGRAZIEGRAZIEGRAZIE!!!"
+===

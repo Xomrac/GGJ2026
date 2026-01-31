@@ -1,0 +1,44 @@
+﻿title: Red_firstQuest
+position: 574,408
+---
+Red: "Ehm.. vedo che sei molto indaffarato. Nonostante questo, credo che tu sia l'unica persona che possa aiutarmi."
+"Bene. Grazie. Vedi, per arrivare vivo alla gara di questa sera, ho bisogno una <b>bevanda energetica</b>. Con tutto questo stare in piedi e tenere il broncio, non ho proprio le forze per andare a cercarla. Se non recupero la <b>bevanda energetica</b>, temo che non potrò partecipare alla gara."
+===
+title: Red_firstLoop
+position: 365,408
+---
+Red: "Se non recupero la <b>bevanda energetica</b>, temo che non potrò partecipare alla gara."
+===
+
+title: Red_secondQuest
+position: 574,408
+---
+Red: "Ehi.. so che mi hai già aiutato, ma avrei bisogno di un altro favore. Vedi, non è mai stata mia intenzione sorridere, nella vita intendo, ma ho pensato che mettere in mostra un bel paio di <b>denti da vampiro</b> mi darebbe un grande vantaggio per la gara. Sai dove recuperare dei <b>denti da vampiro</b>?"
+===
+title: Red_secondLoop
+position: 365,408
+---
+Red: "Sai dove recuperare dei <b>denti da vampiro</b>?"
+===
+
+title: Red_thirdQuest
+position: 306,579
+---
+Red: "Ehi! Che bello vederti. Sono disperato, come ho fatto a non pensarci prima! Guarda, guarda i miei occhi! sono così fastidiosamente normali! Non riuscirò mai a vincere la gara con questi occhi. Che ne dici, pensi sia possibile recuperare delle <b>lenti a contatto colorate</b> prima dell'inizio della gara?"
+===
+title: Red_thirdLoop
+position: 365,408
+---
+Red: "pensi sia possibile recuperare delle <b>lenti a contatto colorate</b> prima dell'inizio della gara?"
+===
+
+title: Red_feedbackBad
+position: 316,589
+---
+Red: "Mmh? E questo cosa dovrebbe essere?"
+===
+title: Red_feedbackGood
+position: 326,599
+---
+Red: "Guarda guarda.. hai trovato esattamente quello che mi serviva!"
+===
