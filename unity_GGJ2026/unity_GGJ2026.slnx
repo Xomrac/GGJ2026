@@ -1,6 +1,7 @@
 ﻿<Solution>
   <Project Path="NaughtyAttributes.Core.csproj" />
   <Project Path="NaughtyAttributes.Editor.csproj" />
+  <Project Path="AYellowpaper.SerializedCollections.csproj" />
   <Project Path="Kybernetik.UltEvents.Editor.csproj" />
   <Project Path="NaughtyAttributes.Test.csproj" />
   <Project Path="Yarn.Unity.Samples.Editor.csproj" />
@@ -13,6 +14,7 @@
   <Project Path="FMODUnityEditor.csproj" />
   <Project Path="Assembly-CSharp-firstpass.csproj" />
   <Project Path="FMODUnity.csproj" />
+  <Project Path="AYellowpaper.SerializedCollections.Editor.csproj" />
   <Project Path="FMODUnityHaptics.csproj" />
   <Project Path="YarnSpinner.Unity.Samples.InlineEvent.csproj" />
   <Project Path="YarnSpinner.Unity.Samples.AdvancedSaliency.csproj" />

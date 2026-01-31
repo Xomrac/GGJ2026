@@ -15,6 +15,7 @@ public class FMODEvents : MonoBehaviour
     [field: SerializeField] public EventReference romanceTheme { get; private set; }
     [field: SerializeField] public EventReference deliveryComplete { get; private set; }
     [field: SerializeField] public EventReference deliveryFailed { get; private set; }
+    [field: SerializeField] public EventReference menuButton { get; private set; }
 
         private void Awake()
     {

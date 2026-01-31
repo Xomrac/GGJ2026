@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
-using FMOD.Studio;
 using NaughtyAttributes;
 using UnityEngine;
 
@@ -12,26 +11,24 @@ namespace DefaultNamespace
 	public class DeliveriesManager : MonoBehaviour
 	{
 		public static DeliveriesManager instance;
-
+	
 		public event Action<DeliveryData> NewDeliveryCreated;
 		public event Action<DeliveryData> DeliveryStarted;
 		public event Action<float> DeliveryTimeUpdated;
 		public event Action<DeliveryData> DeliveryCompleted;
 		public event Action<DeliveryData> DeliveryFailed;
-
-
-		[SerializeField, ReadOnly] private float _currentTime;
-		[SerializeField, ReadOnly] private float _currentDeliveryTime;
+		
+		
+		[SerializeField,ReadOnly]private float _currentTime;
+		[SerializeField,ReadOnly]private float _currentDeliveryTime;
 		private DeliveryData _currentDelivery;
 
 		[SerializeField] private DeliverableData _testItem;
 		[SerializeField] private Desk _testDestination;
-		[SerializeField] private float _timeBeforeDelivery = 10f;
+		[SerializeField] private float _timeBeforeDelivery= 10f;
 		[SerializeField] private List<DeliverableData> _possibleItems;
 		[SerializeField] private List<Desk> _possibleDestinations;
-
-		private EventInstance timerMusicInstance;
-
+		
 		private void Awake()
 		{
 			instance = this;
@@ -39,10 +36,10 @@ namespace DefaultNamespace
 
 		private void Start()
 		{
-			StartCoroutine(WaitAndStartDelivery());
+			
 		}
-
-
+		
+		
 		private IEnumerator WaitAndStartDelivery()
 		{
 			_currentDeliveryTime = 0f;
@@ -69,43 +66,33 @@ namespace DefaultNamespace
 		}
 		public void CreateDelivery(DeliverableData toDeliver, DeskInteractionZone deliveryLocation, float deliveryTime)
 		{
-			DeliveryData newDelivery = new DeliveryData(toDeliver, deliveryLocation, deliveryTime);
+			DeliveryData newDelivery = new DeliveryData(toDeliver, deliveryLocation,deliveryTime);
 			Debug.Log($"Delivery Created for {toDeliver.Name} to {deliveryLocation.transform.parent.parent.name}!");
 			deliveryLocation.SetupForDelivery(toDeliver);
 			_currentDelivery = newDelivery;
 			NewDeliveryCreated?.Invoke(newDelivery);
 			StartCoroutine(RunClock());
 			DeliveryStarted?.Invoke(newDelivery);
-
-			AudioManager.Instance.PlayOneShot(FMODEvents.Instance.pagerNotification);
-			timerMusicInstance = AudioManager.Instance.CreateEventInstance(FMODEvents.Instance.timerTheme);
-			timerMusicInstance.start();
 		}
 
 		public void CompleteDelivery()
 		{
 			StopAllCoroutines();
-			var score = Mathf.InverseLerp(0, _currentDelivery.DeliveryTime, _currentDelivery.DeliveryTime - _currentDelivery.elapsedTime);
+			var score = Mathf.InverseLerp(0, _currentDelivery.DeliveryTime , _currentDelivery.DeliveryTime - _currentDelivery.elapsedTime);
 			Debug.Log(score);
 			_currentDelivery.score = score;
 			DeliveryCompleted?.Invoke(_currentDelivery);
 			ScoreTracker.AddScore(score);
 			Debug.Log("Delivery Completed!");
 			StartCoroutine(WaitAndStartDelivery());
-
-			timerMusicInstance.stop(STOP_MODE.ALLOWFADEOUT);
-			timerMusicInstance.release();
 		}
-
+		
 		public void FailDelivery()
 		{
 			StopAllCoroutines();
 			DeliveryFailed?.Invoke(_currentDelivery);
 			ScoreTracker.AddScore(0);
 			StartCoroutine(WaitAndStartDelivery());
-
-			timerMusicInstance.stop(STOP_MODE.ALLOWFADEOUT);
-			timerMusicInstance.release();
 		}
 
 		private IEnumerator RunClock()
@@ -121,7 +108,11 @@ namespace DefaultNamespace
 			FailDelivery();
 		}
 
+		public void StartDeliveries()
+		{
+			StartCoroutine(WaitAndStartDelivery());
+		}
 	}
-
+	
 
 }
