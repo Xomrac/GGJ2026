@@ -68,8 +68,8 @@ public class AnswerManager : MonoBehaviour
         if (lover.Love >= lover.loveTreshold[lover.LoveLevel])
         {
             stopMiniGame();
-            lover.LoveLevel++;
-            lover.waitingObjective = true;
+            lover.LevelUp();
+            
             Debug.Log("Love Level Up!");
         }
         else
