@@ -14,6 +14,9 @@ public class FMODEvents : MonoBehaviour
     [field: Header("UI")]
     [field: SerializeField] public EventReference pagerNotification { get; private set; }
 
+    [field: Header("MUSIC")]
+    [field: SerializeField] public EventReference timerTheme { get; private set; }
+
         private void Awake()
     {
         Instance = this;

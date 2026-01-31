@@ -95,3 +95,10 @@ MonoBehaviour:
       Data3: -1666345302
       Data4: 1404708063
     Path: event:/UI/pager
+  <timerTheme>k__BackingField:
+    Guid:
+      Data1: 173621742
+      Data2: 1149057638
+      Data3: 1785912192
+      Data4: -2013695532
+    Path: event:/MUSIC/timer_theme
