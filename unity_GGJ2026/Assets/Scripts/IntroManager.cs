@@ -28,9 +28,19 @@ public class IntroManager : MonoBehaviour
 
 	public void StartFirstEncounter()
 	{
+		firstLover.gameObject.SetActive(true);
         var runner = FindAnyObjectByType<DialogueRunner>();
         runner.onDialogueComplete.RemoveListener(OnDialogueEnded);
         runner.StartDialogue(_firstEncounter);
+		runner.onDialogueComplete.AddListener(() =>
+		{
+			runner.onDialogueComplete.RemoveAllListeners();
+			runner.onDialogueComplete.AddListener(()=>
+			{
+				firstLover.ForceRequest();
+				runner.onDialogueComplete.RemoveAllListeners();
+			});
+		});
         _delvieriesManager.stopAll();
         _fpsChar.enabled = false;
         _fpsChar.GetComponent<Transform>().LookAt(firstLover.GetComponent<Transform>());
@@ -41,7 +51,7 @@ public class IntroManager : MonoBehaviour
 
     private void FirstLover_CrushRequestCompleted()
     {
-		_delvieriesManager.enabled = true;
+		_delvieriesManager.gameObject.SetActive(true);
         _delvieriesManager.StartDeliveries();
         firstLover.CrushRequestCompleted -= FirstLover_CrushRequestCompleted;
     }

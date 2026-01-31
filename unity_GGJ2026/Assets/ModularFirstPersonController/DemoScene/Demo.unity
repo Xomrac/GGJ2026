@@ -761,7 +761,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   _fpsChar: {fileID: 1649593560}
-  firstLover: {fileID: 0}
+  firstLover: {fileID: 1180490866}
   _delvieriesManager: {fileID: 1836311653}
   _introDialogue:
     project: {fileID: 7545569452688597077, guid: 900ea6853dcc7b441b39041203f53c3f, type: 3}
@@ -2189,6 +2189,10 @@ PrefabInstance:
     - target: {fileID: 3489981038939178783, guid: 0f801b2efbf604c4ea0b3e6d1117a466, type: 3}
       propertyPath: m_Name
       value: Love Interest
+      objectReference: {fileID: 0}
+    - target: {fileID: 6182081777057243896, guid: 0f801b2efbf604c4ea0b3e6d1117a466, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6329699840992446323, guid: 0f801b2efbf604c4ea0b3e6d1117a466, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4672,7 +4676,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 999
   m_TargetDisplay: 0
 --- !u!114 &2041311888
 MonoBehaviour:

@@ -2,6 +2,8 @@ using System;
 using NUnit.Framework;
 using System.Collections.Generic;
 using System.Linq;
+using DefaultNamespace;
+using NaughtyAttributes;
 using UnityEngine;
 using Yarn.Unity;
 
@@ -18,7 +20,7 @@ public class LoveInterest : MonoBehaviour
     public List<DialogueReference> _dialogueLoop;
     public DialogueReference wrongDialogue;
     public DialogueReference goodDialogue;
-    private DeliverableData _currentRequestedItem;
+    [SerializeField,ReadOnly]private DeliverableData _currentRequestedItem;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void OnTriggerEnter(Collider other)
     {
@@ -77,16 +79,22 @@ public class LoveInterest : MonoBehaviour
 
     }
 
-    public void LevelUp()
-    {   
-        LoveLevel++;    
+    public void ForceRequest()
+    {
         waitingObjective = true;
         var newRequest = new CrushRequestData();
-        newRequest.requestedItem = characterInterests.levelUpObjects.Keys.ToList()[LoveLevel - 1];
+        newRequest.requestedItem = characterInterests.levelUpObjects.Keys.ToList()[LoveLevel];
         newRequest.timeToDeliver = characterInterests.levelUpObjects[newRequest.requestedItem];
         _currentRequestedItem = newRequest.requestedItem;
         newRequest.requester = this;
         CrushMadeRequest?.Invoke(newRequest);
+        DeliveriesManager.instance.SetupCrushDelivery(newRequest.requestedItem);
+    }
+
+    public void LevelUp()
+    {   
+        LoveLevel++;    
+        ForceRequest();
     }
 
     public void LevelDown()

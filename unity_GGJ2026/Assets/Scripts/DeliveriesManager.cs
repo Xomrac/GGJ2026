@@ -81,6 +81,14 @@ namespace DefaultNamespace
 			DeliveryStarted?.Invoke(newDelivery);
 		}
 
+		public void SetupCrushDelivery(DeliverableData toDeliver)
+		{
+			foreach (Desk desk in _possibleDestinations)
+			{
+				desk.TrySetSpecificItem(toDeliver);
+			}
+		}
+
 		public void CompleteDelivery()
 		{
 			StopAllCoroutines();

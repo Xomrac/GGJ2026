@@ -1,4 +1,5 @@
 using DefaultNamespace;
+using NaughtyAttributes;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -15,6 +16,7 @@ public class UIManager : MonoBehaviour
    {
        Application.Quit();
     }
+    [Button]
     public void OpenGameOver()
     {
         DeliveriesManager.instance.stopAll();

@@ -11,7 +11,7 @@ public class Desk : MonoBehaviour
 	[SerializeField] private DeskInteractionZone deskInteractionZone;
 
 	[SerializeField] private List<DeliverableData> _availableItems;
-	public List<DeliverableData> DeliverableItem => new();
+	public List<DeliverableData> DeliverableItems => new();
 	public string PagerCode => _pagerCode;
 	public DeskInteractionZone DeskInteractionZone => deskInteractionZone;
 
@@ -22,7 +22,7 @@ public class Desk : MonoBehaviour
 		deskInteractionZone?.Setup(_availableItems[Random.Range(0, _availableItems.Count)], _pagerCode);
 	}
 	
-	private void TrySetSpecificItem(DeliverableData item)
+	public void TrySetSpecificItem(DeliverableData item)
 	{
 		if (!_availableItems.Contains(item)) return;
 		deskInteractionZone?.Setup(item, _pagerCode);
