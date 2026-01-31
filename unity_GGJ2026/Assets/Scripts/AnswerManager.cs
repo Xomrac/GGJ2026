@@ -69,6 +69,7 @@ public class AnswerManager : MonoBehaviour
         {
             stopMiniGame();
             lover.LoveLevel++;
+            lover.waitingObjective = true;
             Debug.Log("Love Level Up!");
         }
         else
