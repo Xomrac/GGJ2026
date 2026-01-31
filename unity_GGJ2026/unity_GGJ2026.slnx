@@ -14,6 +14,7 @@
   <Project Path="FMODUnity.csproj" />
   <Project Path="FMODUnityHaptics.csproj" />
   <Project Path="YarnSpinner.Unity.Samples.InlineEvent.csproj" />
+  <Project Path="Assembly-CSharp.csproj" />
   <Project Path="YarnSpinner.Unity.Samples.AdvancedSaliency.csproj" />
   <Project Path="YarnSpinner.Unity.Samples.BackgroundChatter.csproj" />
   <Project Path="YarnSpinner.Unity.Samples.PhoneChat.csproj" />
@@ -22,7 +23,6 @@
   <Project Path="AYellowpaper.SerializeInterfaces.csproj" />
   <Project Path="YarnSpinner.Unity.Samples.VoiceOver.csproj" />
   <Project Path="YarnSpinner.Unity.Samples.Welcome.csproj" />
-  <Project Path="Assembly-CSharp.csproj" />
   <Project Path="YarnSpinner.Unity.Samples.NodeInternals.csproj" />
   <Project Path="YarnSpinner.Unity.Samples.CustomSaliency.csproj" />
   <Project Path="YarnSpinner.Unity.Samples.BasicSaliency.csproj" />
