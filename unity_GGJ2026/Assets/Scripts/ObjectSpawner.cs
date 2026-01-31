@@ -1,35 +1,30 @@
+using DefaultNamespace;
 using UnityEngine;
 
 public class ObjectSpawner : MonoBehaviour
 {
-    public GameObject spawnedObject;
-    public Transform player;
-    public ObjectManager ObjectManager;
-    private void Start()
-    {
-        ObjectManager = FindAnyObjectByType<ObjectManager>();
-    }
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("Player")&&ObjectManager.hasObject==false)
-        {
-            SpawnObject();
-            ObjectManager.hasObject = true;
-        }
-        if (ObjectManager.hasObject == false)
-        {
-            Debug.Log("Your hands are full!");
+	private DeliverableData _deliverableItem;
 
-        }
-    }
+	private DeliverableItem _spawnedObject;
+	private Player _player;
 
-    private void SpawnObject()
-    {
-        // Implementation for spawning an object
-        var obj= Instantiate(spawnedObject, Vector3.zero, Quaternion.identity,player);
-        obj.GetComponent<Transform>().localPosition = Vector3.zero;
-        ObjectManager.heldObject = obj;
-        Debug.Log("Object spawned!");
-        
-    }   
+	public void Setup(DeliverableData deliverableItem)
+	{
+		_deliverableItem = deliverableItem;
+	}
+	private void OnTriggerEnter(Collider other)
+	{
+		_player = other.GetComponent<Player>();
+		if (!_player) return;
+		GrabObject();
+	}
+
+	private void GrabObject()
+	{
+		if (_spawnedObject == null)
+		{
+			_spawnedObject = _deliverableItem.SpawnProp();
+		}
+		_player.ObjectManager.GrabObject(_spawnedObject);
+	}
 }
