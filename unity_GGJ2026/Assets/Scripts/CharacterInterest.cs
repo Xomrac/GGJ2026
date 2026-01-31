@@ -6,5 +6,6 @@ public class CharacterInterest
     public bool Favorite;
     public bool Hate;
     public string topic;
-    
+    public int intensity;
+
 }

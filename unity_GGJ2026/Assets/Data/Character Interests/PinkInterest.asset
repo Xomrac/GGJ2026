@@ -16,15 +16,20 @@ MonoBehaviour:
   - Favorite: 1
     Hate: 0
     topic: Sailor Moon
+    intensity: 7
   - Favorite: 1
     Hate: 0
     topic: Il kpop
+    intensity: 9
   - Favorite: 1
     Hate: 0
     topic: Furry
+    intensity: 7
   - Favorite: 0
     Hate: 1
     topic: La politica
+    intensity: 10
   - Favorite: 0
     Hate: 0
     topic: Napoli
+    intensity: 2

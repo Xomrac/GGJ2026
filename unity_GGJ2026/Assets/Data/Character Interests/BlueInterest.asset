@@ -16,15 +16,20 @@ MonoBehaviour:
   - Favorite: 1
     Hate: 0
     topic: Carabinieri
+    intensity: 8
   - Favorite: 0
     Hate: 1
     topic: Il papa
+    intensity: 9
   - Favorite: 0
     Hate: 0
     topic: Pikmin 4
+    intensity: 5
   - Favorite: 0
     Hate: 0
     topic: Carlo magno
+    intensity: 5
   - Favorite: 1
     Hate: 0
     topic: L'attuale situazione in Estonia
+    intensity: 11

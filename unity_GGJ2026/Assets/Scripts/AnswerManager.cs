@@ -43,6 +43,7 @@ public class AnswerManager : MonoBehaviour
         }
         answerList.Clear();
         consecutiveRightAnswers++;
+        answerQuantity++;
         yield return new WaitForSeconds(delayBetweenAnswers);
         spawnAnswer(answerQuantity,currenteLover);
     }
@@ -54,14 +55,15 @@ public class AnswerManager : MonoBehaviour
         }
         answerList.Clear();
         consecutiveRightAnswers = 0;
+        answerQuantity= 4;
         if (answerCoroutine != null)
         {
             StopCoroutine(answerCoroutine);
         }
     }
-    public void OnClickRightAnswer(LoveInterest lover)
+    public void OnClickRightAnswer(LoveInterest lover,CharacterInterest interes)
     {
-        lover.Love += 10;
+        lover.Love += interes.intensity;
         Debug.Log("Correct Answer Clicked!");
         answerCoroutine= StartCoroutine( ClearAnswers());
     }
@@ -71,9 +73,9 @@ public class AnswerManager : MonoBehaviour
         answerCoroutine= StartCoroutine(ClearAnswers());
 
     }
-    public void OnClickWrongAnswer(LoveInterest lover)
+    public void OnClickWrongAnswer(LoveInterest lover,CharacterInterest interest)
     {
-        lover.Love -= 10;
+        lover.Love -= interest.intensity;
         Debug.Log("Wrong Answer Clicked!");
         answerCoroutine= StartCoroutine(ClearAnswers());
 
@@ -86,16 +88,21 @@ public class AnswerManager : MonoBehaviour
         {
             var r = Random.Range(0, lover.characterInterests.Interests.Count);
             CharacterInterest interest = lover.characterInterests.Interests[r];
-            var answer= Instantiate(answerPrefab, new Vector3(Random.Range(-800,800), Random.Range(-300,304), 0), Quaternion.identity,gameObject.GetComponent<Transform>());
-            var movement = answer.GetComponent < AnswerMovement>();
+            var answer = Instantiate(answerPrefab, transform);
+            RectTransform rt = answer.GetComponent<RectTransform>();
+
+            rt.anchoredPosition = new Vector2(
+                Random.Range(-800f, 800f),
+                Random.Range(-300f, 300f)
+            ); var movement = answer.GetComponent < AnswerMovement>();
             movement.RandomValues(consecutiveRightAnswers);
             if (interest.Favorite)
             {
-                answer.GetComponent<UnityEngine.UI.Button>().onClick.AddListener(()=>OnClickRightAnswer(lover));
+                answer.GetComponent<UnityEngine.UI.Button>().onClick.AddListener(()=>OnClickRightAnswer(lover, interest));
             }
             else if (interest.Hate)
             {
-                answer.GetComponent<UnityEngine.UI.Button>().onClick.AddListener(() => OnClickWrongAnswer(lover));
+                answer.GetComponent<UnityEngine.UI.Button>().onClick.AddListener(() => OnClickWrongAnswer(lover,interest));
             }
             else
             {

@@ -16,15 +16,20 @@ MonoBehaviour:
   - Favorite: 1
     Hate: 0
     topic: I piedi
+    intensity: 9
   - Favorite: 0
     Hate: 1
     topic: I tavolini
+    intensity: 6
   - Favorite: 0
     Hate: 0
     topic: I computer da gaming
+    intensity: 2
   - Favorite: 1
     Hate: 0
     topic: I pokemon
+    intensity: 8
   - Favorite: 1
     Hate: 0
     topic: Il pomelo
+    intensity: 11
