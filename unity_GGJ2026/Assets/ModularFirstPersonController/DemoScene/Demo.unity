@@ -761,10 +761,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   _fpsChar: {fileID: 1649593560}
+  firstLover: {fileID: 0}
   _delvieriesManager: {fileID: 1836311653}
   _introDialogue:
     project: {fileID: 7545569452688597077, guid: 900ea6853dcc7b441b39041203f53c3f, type: 3}
-    nodeName: Red_firstLoop
+    nodeName: StoryDialogues
+  _firstEncounter:
+    project: {fileID: 7545569452688597077, guid: 900ea6853dcc7b441b39041203f53c3f, type: 3}
+    nodeName: firstencounter
 --- !u!1 &532710273
 GameObject:
   m_ObjectHideFlags: 0
@@ -2110,6 +2114,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+    - target: {fileID: 8989438074627541658, guid: 0f801b2efbf604c4ea0b3e6d1117a466, type: 3}
+      propertyPath: waitingObjective
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8989438074627541658, guid: 0f801b2efbf604c4ea0b3e6d1117a466, type: 3}
       propertyPath: goodDialogue.project
       value: 
@@ -3624,7 +3632,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   _fpsController: {fileID: 1649593560}
   _objectManager: {fileID: 1649593559}
-  lives: 1
+  lives: 3
 --- !u!1 &1651288524
 GameObject:
   m_ObjectHideFlags: 0
