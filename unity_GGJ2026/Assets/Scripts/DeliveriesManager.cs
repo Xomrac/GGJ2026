@@ -39,7 +39,6 @@ namespace DefaultNamespace
 			
 		}
 		
-		
 		private IEnumerator WaitAndStartDelivery()
 		{
 			_currentDeliveryTime = 0f;

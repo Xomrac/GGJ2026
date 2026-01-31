@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05abc2d2633d4a60ad8603dd18d66094, type: 3}
+  m_Name: DD_Braccialetto
+  m_EditorClassIdentifier: Assembly-CSharp::DeliverableData
+  _icon: {fileID: 21300000, guid: ff6d954afb7d2d443a8a75c4c560835f, type: 3}
+  _prefab: {fileID: 6732639946200799464, guid: 9b5b628fdf07c20458a65b2e0446f310, type: 3}
+  _name: Braccialetto
+  _pagerCode: K07

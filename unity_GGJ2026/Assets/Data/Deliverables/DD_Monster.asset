@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05abc2d2633d4a60ad8603dd18d66094, type: 3}
+  m_Name: DD_Monster
+  m_EditorClassIdentifier: Assembly-CSharp::DeliverableData
+  _icon: {fileID: 21300000, guid: b5dc2907bc1a0d44680aff75677c9c00, type: 3}
+  _prefab: {fileID: 3265878198866541094, guid: a0a9dd5d1a31b0147aef23182f39ce71, type: 3}
+  _name: Monster
+  _pagerCode: M99
