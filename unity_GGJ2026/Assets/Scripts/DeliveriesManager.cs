@@ -54,6 +54,7 @@ namespace DefaultNamespace
 			Debug.Log("New Delivery Created!");
 			CreateDelivery(itemToDeliver, deliveryLocation, 30f);
 		}
+
 		public void CreateDelivery(DeliverableData toDeliver, DropoffZone deliveryLocation, float deliveryTime)
 		{
 			DeliveryData newDelivery = new DeliveryData(toDeliver, deliveryLocation,deliveryTime);
@@ -62,6 +63,8 @@ namespace DefaultNamespace
 			NewDeliveryCreated?.Invoke(newDelivery);
 			StartCoroutine(RunClock());
 			DeliveryStarted?.Invoke(newDelivery);
+
+			AudioManager.Instance.PlayOneShot(FMODEvents.Instance.pagerNotification);
 		}
 
 		public void CompleteDelivery()

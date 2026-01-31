@@ -88,3 +88,10 @@ MonoBehaviour:
       Data3: -1318752371
       Data4: -1943785501
     Path: event:/PLAYER/item_throw
+  <pagerNotification>k__BackingField:
+    Guid:
+      Data1: 1761926558
+      Data2: 1209457694
+      Data3: -1666345302
+      Data4: 1404708063
+    Path: event:/UI/pager

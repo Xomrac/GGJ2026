@@ -13,7 +13,6 @@
   <Project Path="FMODUnityEditor.csproj" />
   <Project Path="Assembly-CSharp-firstpass.csproj" />
   <Project Path="FMODUnity.csproj" />
-  <Project Path="Assembly-CSharp.csproj" />
   <Project Path="FMODUnityHaptics.csproj" />
   <Project Path="YarnSpinner.Unity.Samples.InlineEvent.csproj" />
   <Project Path="YarnSpinner.Unity.Samples.AdvancedSaliency.csproj" />
