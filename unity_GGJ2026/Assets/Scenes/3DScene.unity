@@ -17078,7 +17078,7 @@ GameObject:
   - component: {fileID: 1834196835}
   - component: {fileID: 1834196834}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: PostProcess
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20930,7 +20930,6 @@ Transform:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 351493920}
   - {fileID: 1952036268}
   - {fileID: 1933127016}
   - {fileID: 2082540983}
@@ -20939,3 +20938,4 @@ SceneRoots:
   - {fileID: 1190150505}
   - {fileID: 1951099705}
   - {fileID: 1646714765682474388}
+  - {fileID: 351493920}
