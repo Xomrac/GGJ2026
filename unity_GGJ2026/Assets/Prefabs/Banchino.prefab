@@ -45,7 +45,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e375319333804cf5aff556c94426b1b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ObjectReceiver
-  _expectedItem: {fileID: 0}
 --- !u!65 &433829022725284163
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -471,7 +470,7 @@ MonoBehaviour:
   _deskName: Caccaculo
   _pagerCode: 
   _deskLabel: {fileID: 969087624894281357}
-  _deskInteractor: {fileID: 2610039724217888631}
+  pickupZone: {fileID: 2610039724217888631}
   _deliverableItem: {fileID: 0}
 --- !u!1 &4683484046643499291
 GameObject:
