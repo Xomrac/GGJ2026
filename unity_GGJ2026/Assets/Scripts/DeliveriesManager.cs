@@ -49,23 +49,25 @@ namespace DefaultNamespace
 				_currentDeliveryTime += Time.deltaTime;
 				yield return null;
 			}
+			DeliverableData itemToDeliver = _possibleItems[UnityEngine.Random.Range(0, _possibleItems.Count)];
 			Debug.Log("Waited enough, creating delivery...");
-			Desk deliveryLocation = _possibleDestinations[UnityEngine.Random.Range(0, _possibleDestinations.Count)];
-			List<DeliverableData> availableItems = new List<DeliverableData>();
-			foreach (DeliverableData item in _possibleItems)
+			var dropoffZones = new List<DeskInteractionZone>();
+			foreach (var desk in _possibleDestinations)
 			{
-				if (item != deliveryLocation.DeliverableItem)
+				if (desk.DeskInteractionZone.DeliverableItem == itemToDeliver)
 				{
-					availableItems.Add(item);
+					continue;
 				}
+				dropoffZones.Add(desk.DeskInteractionZone);
 			}
-			DeliverableData itemToDeliver = availableItems[UnityEngine.Random.Range(0, availableItems.Count)];
+			DeskInteractionZone deliveryLocation = dropoffZones[UnityEngine.Random.Range(0, dropoffZones.Count)];
 			Debug.Log("New Delivery Created!");
 			CreateDelivery(itemToDeliver, deliveryLocation, 30f);
 		}
-		public void CreateDelivery(DeliverableData toDeliver, Desk deliveryLocation, float deliveryTime)
+		public void CreateDelivery(DeliverableData toDeliver, DeskInteractionZone deliveryLocation, float deliveryTime)
 		{
 			DeliveryData newDelivery = new DeliveryData(toDeliver, deliveryLocation,deliveryTime);
+			Debug.Log($"Delivery Created for {toDeliver.Name} to {deliveryLocation.transform.parent.parent.name}!");
 			deliveryLocation.SetupForDelivery(toDeliver);
 			_currentDelivery = newDelivery;
 			NewDeliveryCreated?.Invoke(newDelivery);
@@ -76,7 +78,11 @@ namespace DefaultNamespace
 		public void CompleteDelivery()
 		{
 			StopAllCoroutines();
+			var score = Mathf.InverseLerp(0, _currentDelivery.DeliveryTime , _currentDelivery.DeliveryTime - _currentDelivery.elapsedTime);
+			Debug.Log(score);
+			_currentDelivery.score = score;
 			DeliveryCompleted?.Invoke(_currentDelivery);
+			ScoreTracker.AddScore(score);
 			Debug.Log("Delivery Completed!");
 			StartCoroutine(WaitAndStartDelivery());
 		}
@@ -85,6 +91,7 @@ namespace DefaultNamespace
 		{
 			StopAllCoroutines();
 			DeliveryFailed?.Invoke(_currentDelivery);
+			ScoreTracker.AddScore(0);
 			StartCoroutine(WaitAndStartDelivery());
 		}
 
@@ -94,6 +101,7 @@ namespace DefaultNamespace
 			while (_currentTime > 0)
 			{
 				_currentTime -= Time.deltaTime;
+				_currentDelivery.elapsedTime += Time.deltaTime;
 				DeliveryTimeUpdated?.Invoke(_currentTime);
 				yield return null;
 			}

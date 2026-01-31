@@ -21,6 +21,6 @@ public class Player : MonoBehaviour
 
     private void OnDeliveryFailed(DeliveryData _)
     {
-        //_objectManager.RemoveItem();
+        _objectManager.ForceRemoval();
     }
 }

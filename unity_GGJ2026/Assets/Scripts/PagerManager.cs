@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using DefaultNamespace;
 using DG.Tweening;
+using FMODUnity;
 using TMPro;
 using UnityEngine;
 
@@ -13,12 +14,6 @@ public class PagerManager : MonoBehaviour
 	[SerializeField] private float _timeBeforeHide = 2f;
 	[SerializeField] private float _animationsDuration = 0.5f;
 
-	
-
-	
-
-	
-	
 	private DeliveriesManager _deliveriesManager;
 	
 
@@ -36,16 +31,16 @@ public class PagerManager : MonoBehaviour
 		_pagerTransform.anchoredPosition = new Vector2(0, 0);
 	}
 
-	private void OnDeliveryCompleted(DeliveryData _)
+	private void OnDeliveryCompleted(DeliveryData data)
 	{
-		_pagerText.text = "OK!";
+		_pagerText.text = $"OK - {ScoreTracker.GetScoreForPercentage(data.score)}";
 		_timeText.text = "--:--";
 		StartCoroutine(WaitAndSetPosY(0));
 	}
 
 	private void OnDeliveryFailed(DeliveryData _)
 	{
-		_pagerText.text = "KO!";
+		_pagerText.text = "KO! - F";
 		_timeText.text = "--:--";
 		StartCoroutine(WaitAndSetPosY(0));
 	}
