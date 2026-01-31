@@ -5,23 +5,23 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
+    public static AudioManager Instance { get; private set; }
     private List<EventInstance> eventInstances = new List<EventInstance>();
 
     [Range(0, 1)] public float masterVolume = 1f;
     [Range(0, 1)] public float musicVolume = 1f;
-    [Range(0, 1)] public float ambienceVolume = 1f;
     [Range(0, 1)] public float sfxVolume = 1f;
 
     private VCA masterVCA;
     private VCA musicVCA;
-    private VCA ambienceVCA;
     private VCA sfxVCA;
 
     private void Awake()
     {
+        Instance = this;
+        
         masterVCA = RuntimeManager.GetVCA("vca:/Master");
         musicVCA = RuntimeManager.GetVCA("vca:/Music");
-        ambienceVCA = RuntimeManager.GetVCA("vca:/Ambience");
         sfxVCA = RuntimeManager.GetVCA("vca:/Sfx");
     }
 
@@ -29,7 +29,6 @@ public class AudioManager : MonoBehaviour
     {
         masterVCA.setVolume(masterVolume);
         musicVCA.setVolume(musicVolume);
-        ambienceVCA.setVolume(ambienceVolume);
         sfxVCA.setVolume(sfxVolume);
     }
 
@@ -44,6 +43,11 @@ public class AudioManager : MonoBehaviour
         eventInstance.set3DAttributes(RuntimeUtils.To3DAttributes(worldPosition));
         eventInstances.Add(eventInstance);
         return eventInstance;
+    }
+    
+    public void SetEventParameter(EventInstance eventInstance, string parameterName, float parameterValue)
+    {
+        eventInstance.setParameterByName(parameterName, parameterValue);
     }
 
     public void CleanUp()
