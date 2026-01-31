@@ -1,6 +1,7 @@
 using System;
 using DefaultNamespace;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using Yarn.Unity;
 
 public class IntroManager : MonoBehaviour
@@ -14,20 +15,18 @@ public class IntroManager : MonoBehaviour
 	{
 		_fpsChar.enabled = false;
 	}
-
 	private void Start()
 	{
 		var runner = FindAnyObjectByType<DialogueRunner>();
+		runner.StartDialogue(_introDialogue);
 		runner.onDialogueComplete.AddListener(OnDialogueEnded);
-		FadingManager.instance.Fade(0, OnComplete:() =>
-		{
-			runner.StartDialogue(_introDialogue);
-		});
+		
 	}
 
 	private void OnDialogueEnded()
 	{
 		_fpsChar.enabled = true;
 		_delvieriesManager.StartDeliveries();
+		FadingManager.instance.Fade(0);
 	}
 }
