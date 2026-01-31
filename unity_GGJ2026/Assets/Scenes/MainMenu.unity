@@ -1359,7 +1359,21 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Marco\nMichelangelo\nNiccol\xF2\nGreta\nBenedetta\nNourhene\nAndrea\nDario"
+  m_text: 'Marco
+
+    Michelangelo
+
+    Nicola
+
+    Greta
+
+    Benedetta
+
+    Nourhene
+
+    Andrea
+
+    Dario'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a1472a06ca6282648864abe4249f7c0e, type: 2}
   m_sharedMaterial: {fileID: -6508606705563037883, guid: a1472a06ca6282648864abe4249f7c0e, type: 2}
