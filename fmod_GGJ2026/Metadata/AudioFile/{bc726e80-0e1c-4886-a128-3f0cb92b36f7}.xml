@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.03.00">
-	<object class="AudioFile" id="{4152d7f8-2cb0-4e56-b698-8fa40e2a0fee}">
+	<object class="AudioFile" id="{bc726e80-0e1c-4886-a128-3f0cb92b36f7}">
 		<property name="assetPath">
-			<value>Throw/ESM_FG2_FX_combat_one_shot_whoosh_object_throw_02.wav</value>
+			<value>Pager/PagerVibrate_S08TE.950.wav</value>
 		</property>
 		<property name="frequencyInKHz">
-			<value>44.0999985</value>
+			<value>96</value>
 		</property>
 		<property name="channelCount">
 			<value>2</value>
 		</property>
 		<property name="length">
-			<value>0.64000000000000001</value>
+			<value>0.624</value>
 		</property>
 		<relationship name="masterAssetFolder">
 			<destination>{9f5451ff-d29c-4e6c-91d1-7c24bf15471a}</destination>

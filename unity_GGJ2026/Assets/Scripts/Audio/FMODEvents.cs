@@ -11,6 +11,9 @@ public class FMODEvents : MonoBehaviour
     [field: SerializeField] public EventReference itemPickup { get; private set; }
     [field: SerializeField] public EventReference itemThrow { get; private set; }
 
+    [field: Header("UI")]
+    [field: SerializeField] public EventReference pagerNotification { get; private set; }
+
         private void Awake()
     {
         Instance = this;

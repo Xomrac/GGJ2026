@@ -35,8 +35,11 @@
 			<value>volume</value>
 		</property>
 		<property name="value">
-			<value>0</value>
+			<value>-80</value>
 		</property>
+		<relationship name="modulators">
+			<destination>{1eb4ce1f-0fd1-44a2-99c9-d3a441e7e0c5}</destination>
+		</relationship>
 		<relationship name="automatableObject">
 			<destination>{aa09b601-9678-4924-923f-fb4af85dc5e4}</destination>
 		</relationship>
@@ -45,5 +48,10 @@
 		<relationship name="mixerStrip">
 			<destination>{aa09b601-9678-4924-923f-fb4af85dc5e4}</destination>
 		</relationship>
+	</object>
+	<object class="SeekModulator" id="{1eb4ce1f-0fd1-44a2-99c9-d3a441e7e0c5}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>value</value>
+		</property>
 	</object>
 </objects>

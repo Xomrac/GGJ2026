@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.03.00">
 	<object class="AudioFile" id="{d2f8f5d5-0a13-4430-96c4-4a284896604f}">
 		<property name="assetPath">
-			<value>ESM_FG2_FX_combat_one_shot_whoosh_object_throw_03.wav</value>
+			<value>Throw/ESM_FG2_FX_combat_one_shot_whoosh_object_throw_03.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>44.0999985</value>
