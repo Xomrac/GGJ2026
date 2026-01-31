@@ -4,6 +4,8 @@ using UnityEngine.UI;
 public class AnswerMovement : MonoBehaviour
 {
     private Vector2 smoothVelocity;
+    private float timeOffset;
+
 
     public RectTransform buttonRect;
     public float speedX = 200f;
@@ -39,19 +41,24 @@ public class AnswerMovement : MonoBehaviour
 
     public void RandomValues(int multiply)
     {
-        rotationSpeed+=Random.Range(-10f, 15f*multiply+1);
+        rotationSpeed+=Random.Range(-12f, 40f*multiply+1);
         speedX+=Random.Range(-23f, 80f*multiply+3);
         speedY+=Random.Range(-19f, 52f * multiply + 3);
         jitterStrength+=Random.Range(-2f, 5f * multiply + 1);
         maxSpeed+=Random.Range(-20f, 80f * multiply + 1);
         scaleRange+=new Vector2(Random.Range(-0.2f * multiply + 1, 0.2f ), Random.Range(-0.2f * multiply + 1, 0.2f ));
+        scaleChangeInterval+=Random.Range(-0.2f, 0.5f * multiply + 0.1f);
     }
     void Start()
     {
+        movementSmoothTime *= Random.Range(0.5f, 1.5f);
+
+        timeOffset = Random.Range(0f, 1000f);
+
         canvasRect = GetComponentInParent<Canvas>().GetComponent<RectTransform>();
 
-        direction = new Vector2(Random.value > 0.5f ? 1 : -1,
-                                Random.value > 0.5f ? 1 : -1);
+        direction = Random.insideUnitCircle.normalized;
+
 
         targetScale = buttonRect.localScale;
 
@@ -79,9 +86,11 @@ public class AnswerMovement : MonoBehaviour
         Vector2 pos = buttonRect.anchoredPosition;
         pos += velocity * Time.deltaTime;
 
-        // Subtle jitter
-        float jitterX = (Mathf.PerlinNoise(Time.time * jitterSpeed, noiseOffsetX) - 0.5f) * jitterStrength * 0.2f;
-        float jitterY = (Mathf.PerlinNoise(Time.time * jitterSpeed, noiseOffsetY) - 0.5f) * jitterStrength * 0.2f;
+        float t = Time.time + timeOffset;
+
+        float jitterX = (Mathf.PerlinNoise(t * jitterSpeed, noiseOffsetX) - 0.5f) * jitterStrength * 0.2f;
+        float jitterY = (Mathf.PerlinNoise(t * jitterSpeed, noiseOffsetY) - 0.5f) * jitterStrength * 0.2f;
+
         pos += new Vector2(jitterX, jitterY);
 
         buttonRect.anchoredPosition = pos;
