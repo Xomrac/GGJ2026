@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Drawing;
 using NaughtyAttributes;
 using UnityEngine;
 
@@ -26,7 +27,7 @@ namespace DefaultNamespace
 		[SerializeField] private Desk _testDestination;
 		[SerializeField] private float _timeBeforeDelivery= 10f;
 		[SerializeField] private List<DeliverableData> _possibleItems;
-		[SerializeField] private List<DropoffZone> _possibleDestinations;
+		[SerializeField] private List<Desk> _possibleDestinations;
 		
 		private void Awake()
 		{
@@ -48,23 +49,30 @@ namespace DefaultNamespace
 				_currentDeliveryTime += Time.deltaTime;
 				yield return null;
 			}
-			Debug.Log("Waited enough, creating delivery...");
-			DropoffZone deliveryLocation = _possibleDestinations[UnityEngine.Random.Range(0, _possibleDestinations.Count)];
 			DeliverableData itemToDeliver = _possibleItems[UnityEngine.Random.Range(0, _possibleItems.Count)];
+			Debug.Log("Waited enough, creating delivery...");
+			var dropoffZones = new List<DeskInteractionZone>();
+			foreach (var desk in _possibleDestinations)
+			{
+				if (desk.DeskInteractionZone.DeliverableItem == itemToDeliver)
+				{
+					continue;
+				}
+				dropoffZones.Add(desk.DeskInteractionZone);
+			}
+			DeskInteractionZone deliveryLocation = dropoffZones[UnityEngine.Random.Range(0, dropoffZones.Count)];
 			Debug.Log("New Delivery Created!");
 			CreateDelivery(itemToDeliver, deliveryLocation, 30f);
 		}
-
-		public void CreateDelivery(DeliverableData toDeliver, DropoffZone deliveryLocation, float deliveryTime)
+		public void CreateDelivery(DeliverableData toDeliver, DeskInteractionZone deliveryLocation, float deliveryTime)
 		{
 			DeliveryData newDelivery = new DeliveryData(toDeliver, deliveryLocation,deliveryTime);
+			Debug.Log($"Delivery Created for {toDeliver.Name} to {deliveryLocation.transform.parent.parent.name}!");
 			deliveryLocation.SetupForDelivery(toDeliver);
 			_currentDelivery = newDelivery;
 			NewDeliveryCreated?.Invoke(newDelivery);
 			StartCoroutine(RunClock());
 			DeliveryStarted?.Invoke(newDelivery);
-
-			AudioManager.Instance.PlayOneShot(FMODEvents.Instance.pagerNotification);
 		}
 
 		public void CompleteDelivery()

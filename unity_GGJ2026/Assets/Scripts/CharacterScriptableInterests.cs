@@ -6,5 +6,6 @@ using UnityEngine;
 public class CharacterScriptableInterests : ScriptableObject
 {
     public List<CharacterInterest> Interests;
+    public List<DeliverableData> likedObjects;
 
 }

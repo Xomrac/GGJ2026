@@ -65,7 +65,17 @@ public class AnswerManager : MonoBehaviour
     {
         lover.Love += interes.intensity;
         Debug.Log("Correct Answer Clicked!");
-        answerCoroutine= StartCoroutine( ClearAnswers());
+        if (lover.Love >= lover.loveTreshold[lover.LoveLevel])
+        {
+            stopMiniGame();
+            lover.LoveLevel++;
+            lover.waitingObjective = true;
+            Debug.Log("Love Level Up!");
+        }
+        else
+        {
+            answerCoroutine = StartCoroutine(ClearAnswers());
+        }
     }
     public void OnClickWarmAnswer()
     {

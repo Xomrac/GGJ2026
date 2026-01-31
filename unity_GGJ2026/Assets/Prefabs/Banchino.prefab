@@ -470,7 +470,7 @@ MonoBehaviour:
   _deskName: Caccaculo
   _pagerCode: 
   _deskLabel: {fileID: 969087624894281357}
-  pickupZone: {fileID: 2610039724217888631}
+  deskInteractionZone: {fileID: 2610039724217888631}
   _deliverableItem: {fileID: 0}
 --- !u!1 &4683484046643499291
 GameObject:
