@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{00bb8f2f-c210-4358-8451-1fefcbe0b11a}">
+		<property name="assetPath">
+			<value>Jump/ESm_fG2_fX_footsteps_one_shot_wood_foley_characters_jumping_landing_04.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>1.7386621315192743</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{9f5451ff-d29c-4e6c-91d1-7c24bf15471a}</destination>
+		</relationship>
+	</object>
+</objects>

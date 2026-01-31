@@ -6,15 +6,18 @@ public class ObjectManager : MonoBehaviour
 {
     public bool hasObject = false;
     public DeliverableItem heldObject;
+
+    private PlayerSFX playerSfx;
     [SerializeField] private Transform _objectHoldPoint;
-    
+
     private Camera _camera;
 
     private void Awake()
     {
         _camera = Camera.main;
+        playerSfx = GetComponent<PlayerSFX>();
     }
-    
+
     public void RemoveItem()
     {
         heldObject = null;
@@ -33,7 +36,7 @@ public class ObjectManager : MonoBehaviour
         heldObject.transform.localPosition = Vector3.zero;
     }
 
-    private void throwObject() 
+    private void throwObject()
     {
         if (!hasObject || heldObject == null) return;
         hasObject = false;
@@ -42,7 +45,10 @@ public class ObjectManager : MonoBehaviour
         // launch the object forward
         heldObject.Rigidbody.AddForce(_camera.transform.forward * 500f);
         heldObject = null;
+
+        playerSfx.PlayThrowSFX();
     }
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.E))

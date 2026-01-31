@@ -19,7 +19,7 @@ public class AudioManager : MonoBehaviour
     private void Awake()
     {
         Instance = this;
-        
+
         masterVCA = RuntimeManager.GetVCA("vca:/Master");
         musicVCA = RuntimeManager.GetVCA("vca:/Music");
         sfxVCA = RuntimeManager.GetVCA("vca:/Sfx");
@@ -44,7 +44,7 @@ public class AudioManager : MonoBehaviour
         eventInstances.Add(eventInstance);
         return eventInstance;
     }
-    
+
     public void SetEventParameter(EventInstance eventInstance, string parameterName, float parameterValue)
     {
         eventInstance.setParameterByName(parameterName, parameterValue);

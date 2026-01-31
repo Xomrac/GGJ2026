@@ -32,7 +32,7 @@ public class PlayerSFX : MonoBehaviour
             }
         }
 
-        if(player.isSprinting)
+        if (player.isSprinting)
         {
             AudioManager.Instance.SetEventParameter(playerFootsteps, "Speed", 1f);
         }
@@ -40,5 +40,15 @@ public class PlayerSFX : MonoBehaviour
         {
             AudioManager.Instance.SetEventParameter(playerFootsteps, "Speed", 0f);
         }
+    }
+
+    public void PlayThrowSFX()
+    {
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.itemThrow, transform.position);
+    }
+    
+    public void PlayJumpSFX()
+    {
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.playerJump, transform.position);
     }
 }
