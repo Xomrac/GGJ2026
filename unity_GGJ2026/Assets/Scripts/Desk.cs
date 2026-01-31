@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
@@ -9,14 +10,21 @@ public class Desk : MonoBehaviour
 	[SerializeField] private TextMeshProUGUI _deskLabel;
 	[SerializeField] private DeskInteractionZone deskInteractionZone;
 
-	[SerializeField] private DeliverableData _deliverableItem;
-	public DeliverableData DeliverableItem => _deliverableItem;
+	[SerializeField] private List<DeliverableData> _availableItems;
+	public List<DeliverableData> DeliverableItem => new();
 	public string PagerCode => _pagerCode;
 	public DeskInteractionZone DeskInteractionZone => deskInteractionZone;
 
 	private void Awake()
 	{
 		_deskLabel.text = $"{_pagerCode} - {_deskName}";
-		deskInteractionZone?.Setup(_deliverableItem, _pagerCode);
+		deskInteractionZone.SetPool(_availableItems);
+		deskInteractionZone?.Setup(_availableItems[Random.Range(0, _availableItems.Count)], _pagerCode);
+	}
+	
+	private void TrySetSpecificItem(DeliverableData item)
+	{
+		if (!_availableItems.Contains(item)) return;
+		deskInteractionZone?.Setup(item, _pagerCode);
 	}
 }

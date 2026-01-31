@@ -60,7 +60,7 @@ namespace DefaultNamespace
 			var dropoffZones = new List<DeskInteractionZone>();
 			foreach (var desk in _possibleDestinations)
 			{
-				if (desk.DeskInteractionZone.DeliverableItem == itemToDeliver)
+				if (desk.DeskInteractionZone.PossibleItems.Contains(itemToDeliver))
 				{
 					continue;
 				}
