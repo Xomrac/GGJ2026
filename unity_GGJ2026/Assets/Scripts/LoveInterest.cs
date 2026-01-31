@@ -12,9 +12,10 @@ public class LoveInterest : MonoBehaviour
     public event Action CrushRequestCompleted; 
     public float Love = 0f;
     public int LoveLevel = 0;
-    public List<int> loveTreshold = new() { 10, 30, 60, 100 };
-    public bool waitingObjective = false;
+    public List<int> loveTreshold = new() { 10, 30, 60 };
+    public bool waitingObjective = true;
     public List<DialogueReference> _testDialogue;
+    public List<DialogueReference> _dialogueLoop;
     public DialogueReference wrongDialogue;
     public DialogueReference goodDialogue;
     private DeliverableData _currentRequestedItem;
@@ -52,7 +53,7 @@ public class LoveInterest : MonoBehaviour
                 }
                 else
                 {
-                    FindAnyObjectByType<DialogueRunner>().StartDialogue(_testDialogue[LoveLevel]);
+                    FindAnyObjectByType<DialogueRunner>().StartDialogue(_dialogueLoop[LoveLevel]);
                 }
             }
         }

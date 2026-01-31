@@ -47,7 +47,7 @@ public class DeskInteractionZone : MonoBehaviour
 		var player = other.GetComponent<Player>();
 		
 		if (!player) return;
-		if (player.ObjectManager.hasObject)
+		if (player.ObjectManager.hasObject&&DeliveriesManager.instance.isActiveAndEnabled)
 		{
 			TryToDeliverItem(player.ObjectManager.heldObject);
 			_canInteract = false;
