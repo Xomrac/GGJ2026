@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DeliverableData
   _prefab: {fileID: 9199024486119231616, guid: 417e1fd3cd4a23948837f0965ba72ecf, type: 3}
   _name: Verde Cubo
+  _pagerCode: C02550

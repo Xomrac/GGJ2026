@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DeliverableData
   _prefab: {fileID: 9199024486119231616, guid: 6a663a280a3f5ce40a6c195e75f77da9, type: 3}
   _name: Blue Cubo
+  _pagerCode: C00255

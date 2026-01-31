@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
+using NaughtyAttributes;
 using UnityEngine;
 
 namespace DefaultNamespace
@@ -18,7 +19,8 @@ namespace DefaultNamespace
 		public event Action<DeliveryData> DeliveryFailed;
 		
 		
-		private float _currentTime;
+		[SerializeField,ReadOnly]private float _currentTime;
+		[SerializeField,ReadOnly]private float _currentDeliveryTime;
 		private DeliveryData _currentDelivery;
 
 		[SerializeField] private DeliverableData _testItem;
@@ -26,10 +28,6 @@ namespace DefaultNamespace
 		[SerializeField] private float _timeBeforeDelivery= 10f;
 		[SerializeField] private List<DeliverableData> _possibleItems;
 		[SerializeField] private List<Desk> _possibleDestinations;
-		
-
-		
-
 		
 		private void Awake()
 		{
@@ -44,7 +42,14 @@ namespace DefaultNamespace
 		
 		private IEnumerator WaitAndStartDelivery()
 		{
-			yield return new WaitForSeconds(_timeBeforeDelivery);
+			_currentDeliveryTime = 0f;
+			Debug.Log("Started new delivery in a bit...");
+			while (_currentDeliveryTime < _timeBeforeDelivery)
+			{
+				_currentDeliveryTime += Time.deltaTime;
+				yield return null;
+			}
+			Debug.Log("Waited enough, creating delivery...");
 			Desk deliveryLocation = _possibleDestinations[UnityEngine.Random.Range(0, _possibleDestinations.Count)];
 			List<DeliverableData> availableItems = new List<DeliverableData>();
 			foreach (DeliverableData item in _possibleItems)
@@ -54,7 +59,8 @@ namespace DefaultNamespace
 					availableItems.Add(item);
 				}
 			}
-			DeliverableData itemToDeliver = _possibleItems[UnityEngine.Random.Range(0, availableItems.Count)];
+			DeliverableData itemToDeliver = availableItems[UnityEngine.Random.Range(0, availableItems.Count)];
+			Debug.Log("New Delivery Created!");
 			CreateDelivery(itemToDeliver, deliveryLocation, 30f);
 		}
 		public void CreateDelivery(DeliverableData toDeliver, Desk deliveryLocation, float deliveryTime)
@@ -91,7 +97,7 @@ namespace DefaultNamespace
 				DeliveryTimeUpdated?.Invoke(_currentTime);
 				yield return null;
 			}
-			DeliveryFailed?.Invoke(_currentDelivery);
+			FailDelivery();
 		}
 		
 	}

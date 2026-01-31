@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DeliverableData
   _prefab: {fileID: 9199024486119231616, guid: 02a74fd0d1fc6dc428a3df5e418513cf, type: 3}
   _name: Rosso Cubo
+  _pagerCode: C25500
