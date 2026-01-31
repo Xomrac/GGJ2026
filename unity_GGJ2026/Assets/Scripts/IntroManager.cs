@@ -41,6 +41,7 @@ public class IntroManager : MonoBehaviour
 
     private void FirstLover_CrushRequestCompleted()
     {
+		_delvieriesManager.enabled = true;
         _delvieriesManager.StartDeliveries();
         firstLover.CrushRequestCompleted -= FirstLover_CrushRequestCompleted;
     }
