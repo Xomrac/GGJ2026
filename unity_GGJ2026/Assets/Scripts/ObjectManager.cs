@@ -11,7 +11,7 @@ public class ObjectManager : MonoBehaviour
     [SerializeField] private LayerMask _interactableLayer;
 
     
-    private PlayerSfx _playerSfx;
+    private PlayerSFX _playerSFX;
     private Camera _camera;
 
 
@@ -31,7 +31,7 @@ public class ObjectManager : MonoBehaviour
     private void Awake()
     {
         _camera = Camera.main;
-        _playerSfx = GetComponent<PlayerSfx>();
+        _playerSFX = GetComponent<PlayerSFX>();
     }
     
     public void RemoveItem()
@@ -67,7 +67,7 @@ public class ObjectManager : MonoBehaviour
         heldObject.Rigidbody.AddForce(_camera.transform.forward * 500f);
         heldObject = null;
 
-        _playerSfx.PlayThrowSound();
+        _playerSFX.PlayThrowSFX();
     }
     private void Update()
     {
