@@ -39,6 +39,11 @@ namespace DefaultNamespace
 			
 		}
 		
+		public void stopAll()
+		{
+			StopAllCoroutines();
+			gameObject.SetActive(false);
+        }
 		private IEnumerator WaitAndStartDelivery()
 		{
 			_currentDeliveryTime = 0f;
