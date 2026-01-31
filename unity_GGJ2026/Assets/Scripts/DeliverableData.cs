@@ -4,6 +4,8 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "DeliverableData", menuName = "ScriptableObjects/DeliverableData", order = 1)]
 public class DeliverableData : ScriptableObject
 {
+	[SerializeField] private Sprite _icon;
+	public Sprite Icon => _icon;
 	[SerializeField] private DeliverableItem _prefab;
 	[SerializeField] private string _name;
 	[SerializeField] private string _pagerCode;

@@ -33,3 +33,7 @@ MonoBehaviour:
     Hate: 0
     topic: L'attuale situazione in Estonia
     intensity: 11
+  levelUpObjects:
+    _serializedList:
+    - Key: {fileID: 11400000, guid: f933c5441099d8345944a4f200fcd31c, type: 2}
+      Value: 120

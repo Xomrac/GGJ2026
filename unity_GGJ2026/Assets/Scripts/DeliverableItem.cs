@@ -6,6 +6,8 @@ namespace DefaultNamespace
 
 	public class DeliverableItem : MonoBehaviour
 	{
+		
+		
 		[SerializeField] private Rigidbody _rigidbody;
 		public Rigidbody Rigidbody => _rigidbody;
 

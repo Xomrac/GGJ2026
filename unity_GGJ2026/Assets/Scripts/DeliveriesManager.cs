@@ -36,7 +36,7 @@ namespace DefaultNamespace
 
 		private void Start()
 		{
-			StartCoroutine(WaitAndStartDelivery());
+			
 		}
 		
 		
@@ -107,7 +107,11 @@ namespace DefaultNamespace
 			}
 			FailDelivery();
 		}
-		
+
+		public void StartDeliveries()
+		{
+			StartCoroutine(WaitAndStartDelivery());
+		}
 	}
 	
 
