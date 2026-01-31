@@ -9,12 +9,12 @@
   <Project Path="AYellowpaper.SerializeInterfaces.Editor.csproj" />
   <Project Path="Kybernetik.UltEvents.csproj" />
   <Project Path="FMODUnityResonanceEditor.csproj" />
+  <Project Path="Assembly-CSharp.csproj" />
   <Project Path="FMODUnityEditor.csproj" />
   <Project Path="Assembly-CSharp-firstpass.csproj" />
   <Project Path="FMODUnity.csproj" />
   <Project Path="FMODUnityHaptics.csproj" />
   <Project Path="YarnSpinner.Unity.Samples.InlineEvent.csproj" />
-  <Project Path="Assembly-CSharp.csproj" />
   <Project Path="YarnSpinner.Unity.Samples.AdvancedSaliency.csproj" />
   <Project Path="YarnSpinner.Unity.Samples.BackgroundChatter.csproj" />
   <Project Path="YarnSpinner.Unity.Samples.PhoneChat.csproj" />
