@@ -550,6 +550,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2335983589844582913}
     m_Modifications:
+    - target: {fileID: 2762082566786168930, guid: 5ed4e0b1d8fff4345bdfa28b5cf6106c, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: d29182177e44d4d46ba827ed7a4be160, type: 2}
+    - target: {fileID: 2762082566786168930, guid: 5ed4e0b1d8fff4345bdfa28b5cf6106c, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 106a9f79b5fbed341b7bdb24d60d969e, type: 2}
     - target: {fileID: 3900064129054491405, guid: 5ed4e0b1d8fff4345bdfa28b5cf6106c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1
@@ -776,6 +784,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: e56d86b78239936489e5b388f401f2fc, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: adf147edde1345042b2884d16e1ba80b, type: 2}
     - target: {fileID: 919132149155446097, guid: e56d86b78239936489e5b388f401f2fc, type: 3}
       propertyPath: m_Name
       value: geo_ShopName

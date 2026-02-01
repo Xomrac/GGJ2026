@@ -17,9 +17,11 @@ namespace DefaultNamespace
 		public event Action<float> DeliveryTimeUpdated;
 		public event Action<DeliveryData> DeliveryCompleted;
 		public event Action<DeliveryData> DeliveryFailed;
-		
-		
-		[SerializeField,ReadOnly]private float _currentTime;
+
+		public event Action FirstDelivery;
+		public int firstDeliveryDone = 0;
+
+        [SerializeField,ReadOnly]private float _currentTime;
 		[SerializeField,ReadOnly]private float _currentDeliveryTime;
 		private DeliveryData _currentDelivery;
 
@@ -39,7 +41,11 @@ namespace DefaultNamespace
 			
 		}
 		
-		
+		public void stopAll()
+		{
+			StopAllCoroutines();
+			gameObject.SetActive(false);
+        }
 		private IEnumerator WaitAndStartDelivery()
 		{
 			_currentDeliveryTime = 0f;
@@ -54,7 +60,7 @@ namespace DefaultNamespace
 			var dropoffZones = new List<DeskInteractionZone>();
 			foreach (var desk in _possibleDestinations)
 			{
-				if (desk.DeskInteractionZone.DeliverableItem == itemToDeliver)
+				if (desk.DeskInteractionZone.PossibleItems.Contains(itemToDeliver))
 				{
 					continue;
 				}
@@ -75,6 +81,14 @@ namespace DefaultNamespace
 			DeliveryStarted?.Invoke(newDelivery);
 		}
 
+		public void SetupCrushDelivery(DeliverableData toDeliver)
+		{
+			foreach (Desk desk in _possibleDestinations)
+			{
+				desk.TrySetSpecificItem(toDeliver);
+			}
+		}
+
 		public void CompleteDelivery()
 		{
 			StopAllCoroutines();
@@ -84,7 +98,12 @@ namespace DefaultNamespace
 			DeliveryCompleted?.Invoke(_currentDelivery);
 			ScoreTracker.AddScore(score);
 			Debug.Log("Delivery Completed!");
-			StartCoroutine(WaitAndStartDelivery());
+            StartCoroutine(WaitAndStartDelivery());
+			firstDeliveryDone++;
+            if (firstDeliveryDone==1)
+			{
+				FirstDelivery?.Invoke();
+            }
 		}
 		
 		public void FailDelivery()
@@ -93,7 +112,12 @@ namespace DefaultNamespace
 			DeliveryFailed?.Invoke(_currentDelivery);
 			ScoreTracker.AddScore(0);
 			StartCoroutine(WaitAndStartDelivery());
-		}
+            firstDeliveryDone++;
+            if (firstDeliveryDone == 1)
+            {
+                FirstDelivery?.Invoke();
+            }
+        }
 
 		private IEnumerator RunClock()
 		{

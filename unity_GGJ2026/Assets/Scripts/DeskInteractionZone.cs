@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using DefaultNamespace;
 using NaughtyAttributes;
 using UnityEngine;
@@ -16,6 +17,9 @@ public class DeskInteractionZone : MonoBehaviour
 	private string _pagerCode;
 	public string PagerCode => _pagerCode;
 	
+	private List<DeliverableData> _possibleItems = new();
+	public List<DeliverableData> PossibleItems => _possibleItems;
+
 	private bool _canInteract = true;
 
 	private void Awake()
@@ -47,7 +51,7 @@ public class DeskInteractionZone : MonoBehaviour
 		var player = other.GetComponent<Player>();
 		
 		if (!player) return;
-		if (player.ObjectManager.hasObject)
+		if (player.ObjectManager.hasObject&&DeliveriesManager.instance.isActiveAndEnabled)
 		{
 			TryToDeliverItem(player.ObjectManager.heldObject);
 			_canInteract = false;
@@ -87,4 +91,8 @@ public class DeskInteractionZone : MonoBehaviour
 		_player.ObjectManager.GrabObject(_spawnedObject);
 	}
 
+	public void SetPool(List<DeliverableData> deliverableDatas)
+	{
+		_possibleItems = new List<DeliverableData>(deliverableDatas);
+	}
 }

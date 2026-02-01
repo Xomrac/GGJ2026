@@ -1,4 +1,5 @@
 using System;
+using NaughtyAttributes;
 using UnityEngine;
 
 namespace DefaultNamespace
@@ -14,7 +15,7 @@ namespace DefaultNamespace
 		private string _name;
 		public string Name => _name;
 		
-		private DeliverableData _data;
+		[SerializeField,ReadOnly]private DeliverableData _data;
 		public DeliverableData Data => _data;
 		
 
