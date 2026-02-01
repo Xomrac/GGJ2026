@@ -17,8 +17,9 @@ public class Desk : MonoBehaviour
 
 	private void Awake()
 	{
-		_deskLabel.text = $"{_pagerCode} - {_deskName}";
-		deskInteractionZone.SetPool(_availableItems);
+		if(_deskLabel != null)
+			_deskLabel.text = $"{_pagerCode} - {_deskName}";
+		deskInteractionZone?.SetPool(_availableItems);
 		deskInteractionZone?.Setup(_availableItems[Random.Range(0, _availableItems.Count)], _pagerCode);
 	}
 	
