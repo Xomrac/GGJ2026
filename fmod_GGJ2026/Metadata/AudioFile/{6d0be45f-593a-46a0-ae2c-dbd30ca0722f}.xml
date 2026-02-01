@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{6d0be45f-593a-46a0-ae2c-dbd30ca0722f}">
+		<property name="assetPath">
+			<value>ESM_BG_Cinematic_FX_ui_button_one_shot_turn_switch_digital_wood_glass_02.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>96</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>1.0106979166666668</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{9f5451ff-d29c-4e6c-91d1-7c24bf15471a}</destination>
+		</relationship>
+	</object>
+</objects>

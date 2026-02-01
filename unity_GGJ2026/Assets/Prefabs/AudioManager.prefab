@@ -1,0 +1,146 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1683881263994835964
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5389816956566257237}
+  - component: {fileID: 5328114852361103371}
+  - component: {fileID: 2332225874961648091}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5389816956566257237
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1683881263994835964}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5328114852361103371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1683881263994835964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df3f853150c351241aaf391478f039c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AudioManager
+  masterVolume: 1
+  musicVolume: 1
+  sfxVolume: 1
+--- !u!114 &2332225874961648091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1683881263994835964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa5cce34d9c24204ca38a727a18ed9f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FMODEvents
+  <playerFootsteps>k__BackingField:
+    Guid:
+      Data1: -2119127885
+      Data2: 1148780325
+      Data3: -1046287169
+      Data4: 1771147151
+    Path: event:/PLAYER/player_footsteps
+  <playerJump>k__BackingField:
+    Guid:
+      Data1: -1995742393
+      Data2: 1223117820
+      Data3: 197951874
+      Data4: -1831969499
+    Path: event:/PLAYER/player_jump
+  <itemPickup>k__BackingField:
+    Guid:
+      Data1: 2069847583
+      Data2: 1316222495
+      Data3: -1243990639
+      Data4: 1986400348
+    Path: event:/PLAYER/item_pickup
+  <itemThrow>k__BackingField:
+    Guid:
+      Data1: 425564150
+      Data2: 1138543108
+      Data3: -1318752371
+      Data4: -1943785501
+    Path: event:/PLAYER/item_throw
+  <pagerNotification>k__BackingField:
+    Guid:
+      Data1: 1761926558
+      Data2: 1209457694
+      Data3: -1666345302
+      Data4: 1404708063
+    Path: event:/UI/pager
+  <timerTheme>k__BackingField:
+    Guid:
+      Data1: 173621742
+      Data2: 1149057638
+      Data3: 1785912192
+      Data4: -2013695532
+    Path: event:/MUSIC/timer_theme
+  <romanceTheme>k__BackingField:
+    Guid:
+      Data1: -526672642
+      Data2: 1234542906
+      Data3: 1476320443
+      Data4: -1057538078
+    Path: event:/MUSIC/romance_theme
+  <deliveryComplete>k__BackingField:
+    Guid:
+      Data1: -1386430515
+      Data2: 1179977900
+      Data3: 1104364933
+      Data4: 1801585699
+    Path: event:/UI/delivery_complete
+  <deliveryFailed>k__BackingField:
+    Guid:
+      Data1: 51078205
+      Data2: 1178325190
+      Data3: 248118969
+      Data4: 1091233768
+    Path: event:/UI/delivery_failed
+  <menuButton>k__BackingField:
+    Guid:
+      Data1: 1534682001
+      Data2: 1230199971
+      Data3: -437964125
+      Data4: 938806918
+    Path: event:/UI/menu_button
+  <menuPlay>k__BackingField:
+    Guid:
+      Data1: 1074189759
+      Data2: 1224271586
+      Data3: -319921745
+      Data4: -637973770
+    Path: event:/UI/menu_play
+  <menuBack>k__BackingField:
+    Guid:
+      Data1: -815974490
+      Data2: 1311328921
+      Data3: -1496563028
+      Data4: -2062774859
+    Path: event:/UI/menu_back

@@ -5,7 +5,7 @@
 # Cache e file temporanei
 .cache/
 .user/
-
+Assets/
 # Impostazioni locali dell'utente
 *.fspro.user
 
