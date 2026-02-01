@@ -95,13 +95,6 @@ MonoBehaviour:
       Data3: -1666345302
       Data4: 1404708063
     Path: event:/UI/pager
-  <note>k__BackingField:
-    Guid:
-      Data1: 2079547311
-      Data2: 1243712786
-      Data3: 1630952873
-      Data4: 135955005
-    Path: event:/INTERACTION/note
   <timerTheme>k__BackingField:
     Guid:
       Data1: 173621742
@@ -137,3 +130,17 @@ MonoBehaviour:
       Data3: -437964125
       Data4: 938806918
     Path: event:/UI/menu_button
+  <menuPlay>k__BackingField:
+    Guid:
+      Data1: 1074189759
+      Data2: 1224271586
+      Data3: -319921745
+      Data4: -637973770
+    Path: event:/UI/menu_play
+  <menuBack>k__BackingField:
+    Guid:
+      Data1: -815974490
+      Data2: 1311328921
+      Data3: -1496563028
+      Data4: -2062774859
+    Path: event:/UI/menu_back

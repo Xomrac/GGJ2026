@@ -21,11 +21,6 @@ public class MainMenu : MonoBehaviour
 #endif
     }
 
-    public void PlayButtonSFX()
-    {
-        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.menuButton);
-    }
-
     public void OpenSettingsPanel()
     {
         mainPanel.SetActive(false);
@@ -47,5 +42,20 @@ public class MainMenu : MonoBehaviour
     {
         creditsPanel.SetActive(false);
         mainPanel.SetActive(true);
+    }
+
+        public void PlayMenuPlaySFX()
+    {
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.menuPlay);
+    }
+
+    public void PlayMenuBackSFX()
+    {
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.menuBack);
+    }
+
+    public void PlayButtonSFX()
+    {
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.menuButton);
     }
 }
