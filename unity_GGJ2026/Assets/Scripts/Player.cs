@@ -17,6 +17,13 @@ public class Player : MonoBehaviour
         DeliveriesManager.instance.DeliveryCompleted += OnDeliveryCompleted;
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            UIManager.instance.MaximaxeOrMinimze();
+        }
+    }
     private void OnDeliveryCompleted(DeliveryData _)
     {
         _objectManager.RemoveItem();

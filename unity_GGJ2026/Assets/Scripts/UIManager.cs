@@ -7,6 +7,8 @@ public class UIManager : MonoBehaviour
 {
     public static UIManager instance;
     public GameObject gameOverUI;
+    public GameObject cheatsheetMini;
+    public GameObject cheatsheetMax;
 
     private void Start()
     {
@@ -25,6 +27,19 @@ public class UIManager : MonoBehaviour
         {
             gameOverUI.SetActive(true);
         });
+    }
+    public void MaximaxeOrMinimze()
+    {
+        if (cheatsheetMax.activeSelf) { 
+            cheatsheetMax.SetActive(false);
+            cheatsheetMini.SetActive(true);
+            FindAnyObjectByType<FirstPersonController>().enabled = true;
+        }
+        else {          
+            cheatsheetMini.SetActive(false);
+            cheatsheetMax.SetActive(true);
+            FindAnyObjectByType<FirstPersonController>().enabled = false;
+        }
     }
     public void Restart()
     {
